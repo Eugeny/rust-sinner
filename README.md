@@ -1,5 +1,7 @@
 # Rust S̵̓i̸̓n̵̉
 
+![Crates.io](https://img.shields.io/crates/d/sinner?color=green&label=crates.io)
+
 _I̴n̴f̶e̸r̵n̷a̴l mutability!_
 
 ---
@@ -7,6 +9,10 @@ _I̴n̴f̶e̸r̵n̷a̴l mutability!_
 Howdy, friendly Rust developer! Ever had a value get m̵̯̅ð̶͊v̴̮̾ê̴̼͘d away right under your nose just when you need it? Your thread function requires move semantics, but you j̸̉us†̸ ain't got time for †̸̰͋h̸ą̷̊͝t?
 
 W̵e̴l̵l̸ ̵w̶o̴r̶r̴y̶ ̵n̶o̶ ̷m̴o̷r̶e̴,̸, just sprinkle some _s̴̖̑í̵̲ṋ̵̀_ on it and call it a day!
+
+```
+sinner = "0.1"
+```
 
 ## Examples
 
@@ -93,7 +99,7 @@ error[E0382]: borrow of moved value: `x`
    --> src/main.rs:144:5
     |
 136 |     let mut x = Stuff { content: "old".to_string() };
-    |         ----- move occurs because `x` has type `Stuff`, which does not implement the `Copy` trait
+    |         ----- move occurs because `x` has type `Stuff`
 137 |     let t = spawn({
 138 |         move || {
     |         ------- value moved into closure here
@@ -273,7 +279,6 @@ help: insert some indirection (e.g., a `Box`, `Rc`, or `&`) to make `Item` repre
 73 ~     pub next: Box<Option<Self>>,
    |
 
-error[E0599]: no method named `clone` found for mutable reference `&mut Item<T>` in the current scope
    --> src/main.rs:100:35
     |
 100 |             item.prev = Some(tail.clone());
