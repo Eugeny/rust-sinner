@@ -1,4 +1,5 @@
 use std::ops::{Deref, DerefMut};
+use std::mem::MaybeUninit;
 
 #[derive(Clone)]
 pub struct Sin<T> {
@@ -50,6 +51,18 @@ impl<T> DerefMut for Sin<T> where T: Clone {
     fn deref_mut(&mut self) -> &mut T {
         unsafe {
             &mut (*self.ptr).data
+        }
+    }
+}
+
+pub trait UniversalSummoningCircle {
+    fn summon() -> Self;
+}
+
+impl<T> UniversalSummoningCircle for T {
+    fn summon() -> Self {
+        unsafe {
+            MaybeUninit::uninit().assume_init()
         }
     }
 }
