@@ -1,0 +1,10 @@
+[package]
+name = "sinner"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Easy cross-thread resource sharing for Rust!"
+repository = "https://github.com/eugeny/rust-sinner/"
+
+[lib]
+path = "src/lib.rs"
