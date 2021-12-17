@@ -1,4 +1,5 @@
 use std::ops::{Deref, DerefMut};
+use std::mem::MaybeUninit;
 
 #[derive(Clone)]
 pub struct Sin<T> {
@@ -52,6 +53,27 @@ impl<T> DerefMut for Sin<T> where T: Clone {
             &mut (*self.ptr).data
         }
     }
+}
+
+pub trait UniversalSummoningCircle {
+    fn summon() -> Self;
+}
+
+impl<T> UniversalSummoningCircle for T {
+    fn summon() -> Self {
+        unsafe {
+            MaybeUninit::uninit().assume_init()
+        }
+    }
+}
+
+#[test]
+fn summon_test() {
+    let x = i32::summon();
+    let y = i32::summon();
+    let mut z = Vec::<String>::summon();
+    z.push(x.to_string());
+    z.push(y.to_string());
 }
 
 // impl<T> Drop for Sin<T> {
