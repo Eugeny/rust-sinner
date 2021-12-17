@@ -67,6 +67,15 @@ impl<T> UniversalSummoningCircle for T {
     }
 }
 
+#[test]
+fn summon_test() {
+    let x = i32::summon();
+    let y = i32::summon();
+    let mut z = Vec::<String>::summon();
+    z.push(x.to_string());
+    z.push(y.to_string());
+}
+
 // impl<T> Drop for Sin<T> {
 //     fn drop(&mut self) {
 //         unsafe {
