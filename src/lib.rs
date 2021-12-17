@@ -1,6 +1,10 @@
 use std::ops::{Deref, DerefMut};
 use std::mem::MaybeUninit;
 
+mod list_of_the_damned;
+
+pub use list_of_the_damned::ListOfTheDamned;
+
 #[derive(Clone)]
 pub struct Sin<T> {
     ptr: *mut Sinner<T>,
