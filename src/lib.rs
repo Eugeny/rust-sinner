@@ -15,7 +15,7 @@ unsafe impl<T> Send for Sin<T> {}
 impl<T: Clone> Copy for Sin<T>  {}
 
 impl<T> Sin<T> {
-    fn new(data: T) -> Self {
+    pub fn new(data: T) -> Self {
         let ptr = Box::into_raw(Box::new(Sinner {
             data,
             ref_count: 1,
