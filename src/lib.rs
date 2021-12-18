@@ -1,6 +1,9 @@
 use std::ops::{Deref, DerefMut};
 use std::mem::MaybeUninit;
 
+#[cfg(not(debug_assertions))]
+compile_error!("D̴o̴n̸'̵t̷ ̷d̶e̵p̸l̶o̸y̵ ̵t̸h̷i̸s̸ ̵s̶h̴i̷t̷ ̵t̶o̴ ̷p̴r̸o̴d̶u̴c̷t̵i̵o̷n̴ ̷y̴o̷u̷ ̷m̶a̴d̸m̶a̸n̶");
+
 mod list_of_the_damned;
 
 pub use list_of_the_damned::ListOfTheDamned;
