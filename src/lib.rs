@@ -40,7 +40,7 @@ impl<T> Sin<T> {
 
 impl<T> From<T> for Sin<T> {
     fn from(v: T) -> Self {
-        return Self::new(v);
+        Self::new(v)
     }
 }
 
