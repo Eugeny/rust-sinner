@@ -1,6 +1,6 @@
 # Rust S̵̓i̸̓n̵̉
 
-![Crates.io](https://img.shields.io/crates/d/sinner?color=green&label=crates.io)
+[![Crates.io](https://img.shields.io/static/v1?color=green&label=crates.io&message=666)](https://crates.io/crates/sinner)
 
 _I̴n̴f̶e̸r̵n̷a̴l mutability!_
 
